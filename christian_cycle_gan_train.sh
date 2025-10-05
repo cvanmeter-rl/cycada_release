@@ -1,0 +1,13 @@
+CUDA_VISIBLE_DEVICES=0 python train.py \
+--name syn2real_sat_cyclegan \
+--dataset_mode unaligned \
+--dataroot /path/to/syn2real \
+--which_direction AtoB \
+--model cycle_gan \
+--which_model_netD n_layers --n_layers_D 3 \
+--input_nc 3 --output_nc 3 \
+--resize_or_crop resize_and_crop \
+--loadSize 286 --fineSize 256 \
+--lambda_A 10 --lambda_B 10 --lambda_identity 0 \
+--batchSize 4 \
+--no_flip
